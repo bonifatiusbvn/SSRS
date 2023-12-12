@@ -48,5 +48,12 @@
     <DataSets>@(DataSet)</DataSets>
     <Reports>@(Report)</Reports>
   </PropertyGroup>
+  <ItemGroup>
+    <DataSource Include="SSRS DataSet.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="NewUsers.rdl" />
+    <Report Include="Report1.rdl" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

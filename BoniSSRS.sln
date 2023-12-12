@@ -5,13 +5,34 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SSRS Services", "SSRS Services\SSRS Services.dtproj", "{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}"
 EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SSRS Report", "SSRS Report\SSRS Report.rptproj", "{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
 		Development|Default = Development|Default
+		Release|Default = Release|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}.Debug|Default.ActiveCfg = Development
+		{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}.Debug|Default.Build.0 = Development
+		{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}.DebugLocal|Default.ActiveCfg = Development
+		{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}.DebugLocal|Default.Build.0 = Development
 		{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}.Development|Default.ActiveCfg = Development
 		{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}.Development|Default.Build.0 = Development
+		{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}.Release|Default.ActiveCfg = Development
+		{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}.Release|Default.Build.0 = Development
+		{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}.Debug|Default.ActiveCfg = Debug
+		{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}.Debug|Default.Build.0 = Debug
+		{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}.Debug|Default.Deploy.0 = Debug
+		{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}.DebugLocal|Default.Build.0 = DebugLocal
+		{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}.Development|Default.ActiveCfg = DebugLocal
+		{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}.Development|Default.Build.0 = DebugLocal
+		{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}.Release|Default.ActiveCfg = Release
+		{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}.Release|Default.Build.0 = Release
+		{6DD2CAE7-09C7-4104-8870-E2A6D6FF1804}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

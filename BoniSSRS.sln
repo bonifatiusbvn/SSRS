@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SSRS Services", "SSRS Services\SSRS Services.dtproj", "{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}.Development|Default.ActiveCfg = Development
+		{EF9EB03D-C99C-4BF4-B0B4-D8E231F7F7D2}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A74C474-DFFB-4C12-9C7B-358668BCE1A6}
+	EndGlobalSection
+EndGlobal

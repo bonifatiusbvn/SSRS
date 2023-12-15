@@ -9,42 +9,21 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2023-12-14T06:49:44.9120958Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2023-12-13T06:41:56.4970064Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="DataSource1">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=BONI002;Initial Catalog=SSRSEMP</ConnectString>
-      </ConnectionProperties>
-      <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>6c20f836-2229-4df2-a86c-a248441b511c</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
   <DataSets>
-    <DataSet Name="NewUser">
-      <Query>
-        <DataSourceName>DataSource1</DataSourceName>
-        <CommandText>SELECT TOP (1000) [Id]
-      ,[UserName]
-       ,[FirstName] + ' ' + [LastName] As FullName
-      ,[Gender]
-      ,[DateOfBirth]
-      ,[Email]
-      ,[JoiningDate]
-      ,[Address]
-      ,[PhoneNumber]
-      ,[IsActive]
-  FROM [SSRSEMP].[dbo].[tblUser]</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
+    <DataSet Name="GetById">
+      <SharedDataSet>
+        <SharedDataSetReference>FindUserById</SharedDataSetReference>
+        <QueryParameters>
+          <QueryParameter Name="@UserName">
+            <Value>=Parameters!UserName.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </SharedDataSet>
       <Fields>
-        <Field Name="Id">
-          <DataField>Id</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
         <Field Name="UserName">
           <DataField>UserName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -92,16 +71,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.26729cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.26729cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.07667cm</Width>
+                  <Width>1.65333cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.73812cm</Width>
+                  <Width>2.52646cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>4.24625cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -110,21 +92,15 @@
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.00271cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.1825cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.06302cm</Height>
+                  <Height>0.6cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -136,9 +112,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>User Name</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -150,7 +124,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -169,9 +142,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Full Name</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -183,7 +154,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -202,9 +172,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Gender</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -216,7 +184,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -237,7 +204,6 @@
                                   <Value>Date Of Birth</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -250,7 +216,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -271,7 +236,6 @@
                                   <Value>Email</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -284,7 +248,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -305,7 +268,6 @@
                                   <Value>Joining Date</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -318,7 +280,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -339,7 +300,6 @@
                                   <Value>Address</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -352,7 +312,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -370,10 +329,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Address</Value>
+                                  <Value>Phone Number</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -386,7 +344,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -404,10 +361,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mobile.No</Value>
+                                  <Value>Is Active</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -420,41 +376,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox19">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Is Active</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox19</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -466,7 +387,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>1.06302cm</Height>
+                  <Height>0.6cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -490,7 +411,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -521,7 +441,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -552,7 +471,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -573,7 +491,6 @@
                                   <Value>=Fields!DateOfBirth.Value</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <Format>dd MMM yyyy</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -586,7 +503,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -619,7 +535,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -640,7 +555,6 @@
                                   <Value>=Fields!JoiningDate.Value</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <Format>dd MMM yyyy</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -653,7 +567,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -686,40 +599,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Address1">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Address.Value</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Address1</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -752,7 +631,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -785,7 +663,6 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -809,7 +686,6 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -822,11 +698,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>NewUser</DataSetName>
-            <Top>0.7112cm</Top>
-            <Left>1.05516cm</Left>
-            <Height>2.12604cm</Height>
-            <Width>26.34937cm</Width>
+            <DataSetName>GetById</DataSetName>
+            <Top>2.00766cm</Top>
+            <Left>2.13995cm</Left>
+            <Height>1.2cm</Height>
+            <Width>23.61125cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -837,7 +713,7 @@
         <Height>2in</Height>
         <Style />
       </Body>
-      <Width>11.88542in</Width>
+      <Width>12.99243in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
@@ -850,12 +726,25 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="UserName">
+      <DataType>String</DataType>
+      <Prompt>User Name</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>UserName</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>b74373dd-b4a8-4282-9d8f-de4784008ed3</rd:ReportID>
+  <rd:ReportID>48a17181-3fb8-4eab-8aeb-87a79743f83c</rd:ReportID>
 </Report>

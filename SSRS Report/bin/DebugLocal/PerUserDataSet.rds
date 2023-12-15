@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PerUserDataSet">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=BONI002;Initial Catalog=SSRSEMP</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>539f95b3-a48a-4e3c-bf14-e57ee7fe8397</DataSourceID>
+</RptDataSource>

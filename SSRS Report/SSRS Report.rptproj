@@ -49,11 +49,15 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="FindUserById.rsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <DataSource Include="PerUserDataSet.rds" />
     <DataSource Include="SSRS DataSet.rds" />
   </ItemGroup>
   <ItemGroup>
     <Report Include="NewUsers.rdl" />
-    <Report Include="Report1.rdl" />
+    <Report Include="UserPrm.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

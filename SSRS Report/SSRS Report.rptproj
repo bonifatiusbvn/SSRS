@@ -26,7 +26,7 @@
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-    <TargetServerURL>http://boni002/ReportServer</TargetServerURL>
+    <TargetServerURL>http://boni004/ReportServer</TargetServerURL>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <FullPath>Release</FullPath>
@@ -48,5 +48,22 @@
     <DataSets>@(DataSet)</DataSets>
     <Reports>@(Report)</Reports>
   </PropertyGroup>
+  <ItemGroup>
+    <DataSet Include="User_PRM_DataSet.rsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <DataSource Include="User_PRM_DataSource.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="ConditionalReport.rdl" />
+    <Report Include="DetailsReport.rdl" />
+    <Report Include="Image_Sample.rdl" />
+    <Report Include="MainReport.rdl" />
+    <Report Include="ParameterReport.rdl" />
+    <Report Include="RadioButton.rdl" />
+    <Report Include="TableProperties.rdl" />
+    <Report Include="UserAttendance.rdl" />
+    <Report Include="UserDetails.rdl" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

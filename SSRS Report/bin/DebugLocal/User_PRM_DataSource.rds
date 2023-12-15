@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="User_PRM_DataSource">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=BONI002;Initial Catalog=SSRSEMP</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>bcfbe5ca-1e23-4ff6-ac8d-cc0571522686</DataSourceID>
+</RptDataSource>

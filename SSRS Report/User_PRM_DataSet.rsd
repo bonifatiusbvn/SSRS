@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>User_PRM_DataSource</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@Gender">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT [Id]
+      ,[UserName]
+      ,[FirstName]
+      ,[LastName]
+      ,[Gender]
+      ,[DateOfBirth]
+      ,[Email]
+      ,[EmailConfirmed]
+      ,[JoiningDate]
+      ,[Address]
+      ,[CityId]
+      ,[Pincode]
+      ,[PasswordHash]
+      ,[PasswordSalt]
+      ,[PhoneNumber]
+      ,[PhoneNumberConfirmed]
+      ,[IsActive]
+      ,[LastLoginDate]
+      ,[Role]
+      ,[QuestionId]
+      ,[Answer]
+      ,[Image]
+      ,[DepartmentId]
+      ,[CreatedOn]
+      ,[CreatedBy]
+      ,[StateId]
+      ,[CountryId]
+  FROM [SSRSEMP].[dbo].[tblUser]
+  where Gender=@Gender</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Id">
+        <DataField>Id</DataField>
+        <rd:TypeName>System.Guid</rd:TypeName>
+      </Field>
+      <Field Name="UserName">
+        <DataField>UserName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="FirstName">
+        <DataField>FirstName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="LastName">
+        <DataField>LastName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Gender">
+        <DataField>Gender</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DateOfBirth">
+        <DataField>DateOfBirth</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Email">
+        <DataField>Email</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="EmailConfirmed">
+        <DataField>EmailConfirmed</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="JoiningDate">
+        <DataField>JoiningDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Address">
+        <DataField>Address</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CityId">
+        <DataField>CityId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Pincode">
+        <DataField>Pincode</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PasswordHash">
+        <DataField>PasswordHash</DataField>
+        <rd:TypeName>System.Byte[]</rd:TypeName>
+      </Field>
+      <Field Name="PasswordSalt">
+        <DataField>PasswordSalt</DataField>
+        <rd:TypeName>System.Byte[]</rd:TypeName>
+      </Field>
+      <Field Name="PhoneNumber">
+        <DataField>PhoneNumber</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PhoneNumberConfirmed">
+        <DataField>PhoneNumberConfirmed</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="IsActive">
+        <DataField>IsActive</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="LastLoginDate">
+        <DataField>LastLoginDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Role">
+        <DataField>Role</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="QuestionId">
+        <DataField>QuestionId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Answer">
+        <DataField>Answer</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Image">
+        <DataField>Image</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DepartmentId">
+        <DataField>DepartmentId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="CreatedOn">
+        <DataField>CreatedOn</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="CreatedBy">
+        <DataField>CreatedBy</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="StateId">
+        <DataField>StateId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="CountryId">
+        <DataField>CountryId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

@@ -9,46 +9,32 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2023-12-15T11:44:19.9008927Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2023-12-18T09:55:17.1848278Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DetailsDataSource">
+    <DataSource Name="Pagination">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=BONI002;Initial Catalog=SSRSEMP</ConnectString>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>e2ea3409-616b-4d51-afcf-909488bc1e26</rd:DataSourceID>
+      <rd:DataSourceID>58ebe3a5-974c-4e76-b133-bffa59658f8b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DetailsDataSet">
+    <DataSet Name="Pagination">
       <Query>
-        <DataSourceName>DetailsDataSource</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@UserName">
-            <Value>=Parameters!UserName.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>SELECT u.FirstName,u.LastName,u.UserName, a.Id,a.Date, a.INTime, a.OutTime, a.TotalHours
+        <DataSourceName>Pagination</DataSourceName>
+        <CommandText>SELECT u.FirstName, a.Id,a.Date, a.INTime, a.OutTime, a.TotalHours,u.UserName
 FROM tblUser as u
 INNER JOIN tblAttendance as a
-ON u.Id=a.UserId where FirstName = @UserName</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+ON u.Id=a.UserId</CommandText>
       </Query>
       <Fields>
         <Field Name="FirstName">
           <DataField>FirstName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="LastName">
-          <DataField>LastName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="UserName">
-          <DataField>UserName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Id">
@@ -70,6 +56,10 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
         <Field Name="TotalHours">
           <DataField>TotalHours</DataField>
           <rd:TypeName>System.TimeSpan</rd:TypeName>
+        </Field>
+        <Field Name="UserName">
+          <DataField>UserName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -96,6 +86,9 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                 <TablixColumn>
                   <Width>2.5cm</Width>
                 </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
@@ -103,7 +96,7 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox11">
+                        <Textbox Name="Textbox1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -112,9 +105,9 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                                 <TextRun>
                                   <Value>User Name</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>MidnightBlue</Color>
+                                    <Color>DarkBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -123,13 +116,13 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <BackgroundColor>PowderBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -140,7 +133,44 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox13">
+                        <Textbox Name="Textbox3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>First Name</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>DarkBlue</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>PowderBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -149,9 +179,9 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                                 <TextRun>
                                   <Value>Date</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>MidnightBlue</Color>
+                                    <Color>DarkBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -160,50 +190,13 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>CornflowerBlue</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox15">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>INTime</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>MidnightBlue</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox15</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <BackgroundColor>PowderBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -221,11 +214,12 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Out Time</Value>
+                                  <Value>INTime</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>MidnightBlue</Color>
+                                    <Color>DarkBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -240,7 +234,7 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <BackgroundColor>PowderBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -258,11 +252,12 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total Hours</Value>
+                                  <Value>Out Time</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>MidnightBlue</Color>
+                                    <Color>DarkBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -277,7 +272,45 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <BackgroundColor>PowderBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total Hours</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>DarkBlue</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>PowderBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -301,9 +334,7 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!UserName.Value</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -312,6 +343,38 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>UserName</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="FirstName">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!FirstName.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>FirstName</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -336,7 +399,6 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                                 <TextRun>
                                   <Value>=Fields!Date.Value</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Format>dd-MM-yyyy</Format>
                                   </Style>
                                 </TextRun>
@@ -475,93 +537,49 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
+                  <FixedData>true</FixedData>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                  <KeepTogether>true</KeepTogether>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="Details" />
+                  <Group Name="Group1">
+                    <GroupExpressions>
+                      <GroupExpression>=CEILING(RowNumber(Nothing)/20)</GroupExpression>
+                    </GroupExpressions>
+                    <PageBreak>
+                      <BreakLocation>Between</BreakLocation>
+                    </PageBreak>
+                  </Group>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="Details" />
+                    </TablixMember>
+                  </TablixMembers>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DetailsDataSet</DataSetName>
-            <Top>3.29354cm</Top>
-            <Left>6.40503cm</Left>
+            <DataSetName>Pagination</DataSetName>
+            <Left>6.1722cm</Left>
             <Height>1.2cm</Height>
-            <Width>12.5cm</Width>
+            <Width>15cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
-          <Textbox Name="Textbox1">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>="User Name : " &amp; Parameters!UserName.Value</Value>
-                    <Style>
-                      <FontSize>18pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.19803cm</Top>
-            <Left>6.40503cm</Left>
-            <Height>0.95983cm</Height>
-            <Width>12.5cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Image Name="GoBack">
-            <Source>Embedded</Source>
-            <Value>GoBack</Value>
-            <Sizing>FitProportional</Sizing>
-            <ActionInfo>
-              <Actions>
-                <Action>
-                  <Drillthrough>
-                    <ReportName>MainReport</ReportName>
-                  </Drillthrough>
-                </Action>
-              </Actions>
-            </ActionInfo>
-            <Top>1.19803cm</Top>
-            <Left>19.95169cm</Left>
-            <Height>0.95983cm</Height>
-            <Width>0.992cm</Width>
-            <ZIndex>2</ZIndex>
-            <ToolTip>Go To Main Report</ToolTip>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Image>
         </ReportItems>
-        <Height>2.425in</Height>
+        <Height>2.175in</Height>
         <Style />
       </Body>
-      <Width>10.65833in</Width>
+      <Width>10.64167in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
@@ -574,39 +592,12 @@ ON u.Id=a.UserId where FirstName = @UserName</CommandText>
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParameters>
-    <ReportParameter Name="UserName">
-      <DataType>String</DataType>
-      <Prompt>User Name</Prompt>
-    </ReportParameter>
-  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
-      <CellDefinitions>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>UserName</ParameterName>
-        </CellDefinition>
-      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
-  <EmbeddedImages>
-    <EmbeddedImage Name="GoBack">
-      <MIMEType>image/jpeg</MIMEType>
-      <ImageData>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</ImageData>
-    </EmbeddedImage>
-  </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>bca02afe-ab9e-4d47-a134-658b73c2fac8</rd:ReportID>
+  <rd:ReportID>366de030-8298-43e7-b97e-a69a0ff9ff31</rd:ReportID>
 </Report>

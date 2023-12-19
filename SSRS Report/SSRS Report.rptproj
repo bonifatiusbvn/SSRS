@@ -55,15 +55,21 @@
     <DataSource Include="User_PRM_DataSource.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Chart.rdl" />
     <Report Include="ConditionalReport.rdl" />
     <Report Include="DetailsReport.rdl" />
     <Report Include="Image_Sample.rdl" />
+    <Report Include="ListDemo.rdl" />
     <Report Include="MainReport.rdl" />
+    <Report Include="PaginationReport.rdl" />
     <Report Include="ParameterReport.rdl" />
+    <Report Include="PositioningParameter.rdl" />
     <Report Include="RadioButton.rdl" />
+    <Report Include="SP_Parameter.rdl" />
     <Report Include="TableProperties.rdl" />
     <Report Include="UserAttendance.rdl" />
     <Report Include="UserDetails.rdl" />
+    <Report Include="UserSP.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

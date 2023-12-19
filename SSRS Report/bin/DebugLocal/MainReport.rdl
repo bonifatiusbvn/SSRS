@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2023-12-15T04:49:23.6348243Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2023-12-15T05:31:18.6189870Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -61,9 +61,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>First Name</Value>
+                                  <Value>User Name</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
@@ -106,6 +107,7 @@
                                   <Value>=Fields!FirstName.Value</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <Color>=IIF(ROWNUMBER(Nothing) mod 2 = 1,"MidnightBlue","Teal")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -115,6 +117,21 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>FirstName</rd:DefaultName>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>DetailsReport</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="UserName">
+                                      <Value>=Fields!FirstName.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <ToolTip>="Click Here to View Details about " &amp; Fields!FirstName.Value</ToolTip>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
